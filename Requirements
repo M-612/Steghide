@@ -1,0 +1,9 @@
+python3: Installs Python 3 interpreter.
+python3-pip: Installs pip, the package installer for Python.
+python3-venv: Provides support for creating isolated Python environments.
+build-essential: Includes essential build tools like GCC, g++, and make.
+libjpeg-dev: Installs JPEG library development files, useful for image processing.
+zlib1g-dev: Compression library, often needed for Python packages requiring zlib.
+libssl-dev: Installs SSL libraries, required for secure communications.
+libffi-dev: Installs Foreign Function Interface library, needed for some cryptographic packages.
+python3-dev: Installs development headers for Python 3, necessary for building some Python modules.
