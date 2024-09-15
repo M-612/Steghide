@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Clear the screen
+clear
+
+# Display a welcome message
+echo "Welcome to Steghide Tool v1.0"
+
+# Function to display the menu
+show_menu() {
+    echo ""
+    echo "1. Embed a file in an image"
+    echo "2. Extract a file from an image"
+    echo "3. View information about an image"
+    echo "4. Exit"
+}
+
+# Display the menu
+show_menu
+
+# Prompt user for choice
+read -p "Choose an option (1-4): " choice
+
+# Process user input
+case $choice in
+    1)
+        read -p "Enter the image file path: " img
+        read -p "Enter the file to embed: " file
+        read -p "Enter a passkey: " pass
+        steghide embed -cf "$img" -ef "$file" -p "$pass"
+        ;;
+    2)
+        read -p "Enter the image file to extract from: " img
+        read -p "Enter a passkey: " pass
+        steghide extract -sf "$img" -p "$pass"
+        ;;
+    3)
+        read -p "Enter the image file to view info: " img
+        steghide info "$img"
+        ;;
+    4)
+        echo "Exiting..."
+        exit 0
+        ;;
+    *)
+        echo "Invalid option. Please try again."
+        ;;
+esac
+
+# End of script
